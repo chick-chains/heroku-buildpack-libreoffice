@@ -26,7 +26,7 @@ mkdir -p release
 
 # Download and extract the .debs
 curl -L ${DEB_DOWNLOAD_URL} -o libreoffice.tar.gz
-archive_name=$(tar tzf libreoffice.tar.gz | sed -e 's@/.*@@' | uniq)
+archive_name=$(tar tf libreoffice.tar.gz | sed -e 's@/.*@@' | uniq)
 tar xzf libreoffice.tar.gz
 
 cd ${archive_name}
